@@ -11,7 +11,7 @@ export default function Complete(){
    const [loading , setLoading] = useState(false);
 
 
-   const fetchAllData= async ()=>{
+   const fetchComData= async ()=>{
       try{
          setLoading(true);
 
@@ -32,7 +32,7 @@ export default function Complete(){
    }
 
    useEffect(()=>{
-      fetchAllData();
+      fetchComData();
    } , [])
 
 
@@ -48,7 +48,7 @@ export default function Complete(){
                </div>
             )
          }
-         <Cards data={data}  />
+         <Cards data={data} fetchCom = {fetchComData} />
       </div>
    )
 }

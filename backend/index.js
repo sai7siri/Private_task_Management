@@ -1,19 +1,22 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors"); 
-const cookieparser = require("cookie-parser");
+const app = express();
+const path = require('path');
+
 require("dotenv").config();
 
-const app = express();
-
-const userRoutes = require("./routes/userRoutes");
+const allRoutes = require("./routes/userRoutes");
 
 // middlewares
+const _dirname = path.resolve();
 
  app.use(cors({
-   origin: "http://localhost:5173", 
+   origin: "http://localhost:5173",
+   methods : ["POST" , "PUT" , "GET" , "DELETE"],
+   allowedHeaders : ['Content-Type' , 'Authorization'], 
    credentials: true,
- }))
+ }));
 
 
 app.use(express.json());
@@ -22,13 +25,18 @@ app.use(express.json());
 const port = process.env.PORT;
 
 //  all routess
+app.use("/api/v1", allRoutes);
 
-app.use("/api/v1", userRoutes);
+app.use(express.static(path.join(_dirname , "/client/dist")));
+
+app.get( '*', (_,res)=>{
+   res.sendFile(path.resolve(_dirname , "client" , "dist" , "index.html"));
+} );
 
 
 
 app.get("/", (req,res)=>{
-   res.send("<h1>hey there sai sirimarthi??</h1>")
+   res.send("<h1>hey there taskmanagement??</h1>")
 })
 
 app.listen(port , ()=>{
@@ -37,4 +45,4 @@ app.listen(port , ()=>{
 
 mongoose.connect(process.env.MONGO_URI)
 .then(()=> console.log("atlas DB CONNects"))
-.catch(()=> console.log("network || DB connection error "))
+.catch((err)=> console.log("network || DB connection error " , err));

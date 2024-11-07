@@ -2,7 +2,6 @@
 import { persistReducer, persistStore } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 import authSlice from './authSlice';
-import movieSlice from './movieSlice';
 
 import { combineReducers , configureStore } from '@reduxjs/toolkit';
 const authPersistConfig = {
@@ -13,7 +12,6 @@ const authPersistConfig = {
 
 const rootReducer = combineReducers({
   auth: persistReducer(authPersistConfig, authSlice), // Persisting only authSlice
-  movie: movieSlice, // movieSlice will not be persisted
 });
 
 export const store = configureStore({

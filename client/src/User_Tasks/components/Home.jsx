@@ -11,8 +11,6 @@ function Home() {
     <div className="relative">
       <SideBar />
       <div className="bg-[#e8e8e8] fixed top-20 left-1 sm:left-56 bottom-[60px] sm:bottom-1 right-1 m-1 rounded-md">
-       
-
         {/* Outlet to render nested routes */}
         <Outlet />
       </div>

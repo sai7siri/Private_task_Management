@@ -12,7 +12,7 @@ export default function Important(){
    const [loading , setLoading] = useState(false);
 
 
- const fetchAllData= async ()=>{
+ const fetchImpData= async ()=>{
       try{
          setLoading(true);
 
@@ -33,7 +33,7 @@ export default function Important(){
    }
 
    useEffect(()=>{
-      fetchAllData();
+      fetchImpData();
    } , [])
 
 
@@ -49,7 +49,7 @@ export default function Important(){
                </div>
             )
          }
-         <Cards data={important}  />
+         <Cards data={important} fetchImp = {fetchImpData} />
       </div>
    )
 }

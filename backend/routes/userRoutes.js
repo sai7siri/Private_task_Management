@@ -4,7 +4,6 @@ const {authenticated} = require('../middlewares/verifyToken')
 const {
   addUser,
   loginUser,
-  signoutUser,
   logOut,
   getUser,
 } = require("../conrollers/userContrler");

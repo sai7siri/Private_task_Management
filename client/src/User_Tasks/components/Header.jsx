@@ -62,14 +62,15 @@ const Display = ({ handleLogout }) => {
         <Link to="/home">
           <div>
             {user ? (
-              <div className="flex items-center gap-4">
+              <div className="flex items-center gap-4 sm:hidden">
                 <img
-                  src={user.profile}
+                  src={user.profile || "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSb51ZwKCKqU4ZrB9cfaUNclbeRiC-V-KZsfQ&s"}
+                  alt="profile"
                   className="w-16 h-16 rounded-full object-cover border border-black/30 p-1"
                 />
                 <LogOut
                   color="white"
-                  className="hover:scale-125 sm:hidden block"
+                  className="hover:scale-125"
                   size={"24"}
                   onClick={handleLogout}
                 />

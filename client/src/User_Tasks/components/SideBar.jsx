@@ -42,7 +42,8 @@ export default function SideBar() {
     <div className="hidden sm:block max-w-52 w-full border m-1 rounded-md bg-[#d48f8a] fixed bottom-1 top-20 ">
       <div className="h-full py-2 flex flex-col items-center justify-between">
         {/*first users  */}
-        <div className="border-b w-full flex-shrink-0">
+        <div className="border-b w-full flex flex-col items-center ">
+          <img src={user.profile || "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSb51ZwKCKqU4ZrB9cfaUNclbeRiC-V-KZsfQ&s"} className="w-14 h-14 object-cover rounded-full" alt="profile" />
           <p className="text-center text-xl font-semibold text-slate-700 ">
             {user.name}
           </p>
