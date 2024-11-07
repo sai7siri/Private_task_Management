@@ -1,3 +1,3 @@
 
 
-export const startpoint = "http://localhost:7070"
+export const startpoint = "https://private-task-management.onrender.com"

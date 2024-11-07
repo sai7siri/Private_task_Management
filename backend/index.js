@@ -12,7 +12,7 @@ const allRoutes = require("./routes/userRoutes");
 const _dirname = path.resolve();
 
  app.use(cors({
-   origin: "http://localhost:5173",
+   origin: "https://private-task-management.onrender.com",
    methods : ["POST" , "PUT" , "GET" , "DELETE"],
    allowedHeaders : ['Content-Type' , 'Authorization'], 
    credentials: true,
