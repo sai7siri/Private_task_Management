@@ -64,7 +64,7 @@ const Display = ({ handleLogout }) => {
                 <img
                   src={user.profile || "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSb51ZwKCKqU4ZrB9cfaUNclbeRiC-V-KZsfQ&s"}
                   alt="profile"
-                  className="w-13 h-13 rounded-full object-cover border border-black/30 p-1"
+                  className="w-12 h-12 rounded-full object-cover border border-black/30 p-1"
                 />
                 <LogOut
                   color="white"
