@@ -56,8 +56,6 @@ const Display = ({ handleLogout }) => {
             <img src={logo} className="w-16" alt="profile" />
           </Link>
         </div>
-        {/* second search */}
-          <h1 className="font-semibold font-mono text-2xl text-[#37f59c]">Personal Task Management</h1>
         {/* third  profile*/}
         <Link to="/home">
           <div>
@@ -66,7 +64,7 @@ const Display = ({ handleLogout }) => {
                 <img
                   src={user.profile || "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSb51ZwKCKqU4ZrB9cfaUNclbeRiC-V-KZsfQ&s"}
                   alt="profile"
-                  className="w-16 h-16 rounded-full object-cover border border-black/30 p-1"
+                  className="w-13 h-13 rounded-full object-cover border border-black/30 p-1"
                 />
                 <LogOut
                   color="white"
